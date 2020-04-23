@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +31,15 @@ public class ProjectTaskController {
 		return new ResponseEntity<ProjectTask>(newPT, HttpStatus.CREATED);
 	}
 
+	@GetMapping("/all")
+	public Iterable<ProjectTask> getAllPTs() {
+		return projectTaskService.findAll();
+	}
+
+	@GetMapping("/{pt_id}")
+	public ResponseEntity<?> getById(@PathVariable Long pt_id) {
+		ProjectTask projectTask = projectTaskService.findById(pt_id);
+		return new ResponseEntity<ProjectTask>(projectTask, HttpStatus.OK);
+	}
 
 }
