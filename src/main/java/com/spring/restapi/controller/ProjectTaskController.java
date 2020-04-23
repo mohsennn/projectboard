@@ -30,9 +30,5 @@ public class ProjectTaskController {
 		return new ResponseEntity<ProjectTask>(newPT, HttpStatus.CREATED);
 	}
 
-	@GetMapping("/employees")
-	public String returnHello() {
-		return "Bonjour !!!!";
-	}
 
 }

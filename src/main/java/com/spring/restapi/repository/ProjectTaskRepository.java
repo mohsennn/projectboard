@@ -7,5 +7,5 @@ import com.spring.restapi.model.ProjectTask;
 
 @Repository
 public interface ProjectTaskRepository extends CrudRepository<ProjectTask, Long> {
-
+ProjectTask getById(Long id);
 }
