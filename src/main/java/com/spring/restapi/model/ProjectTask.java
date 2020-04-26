@@ -17,7 +17,7 @@ public class ProjectTask {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotBlank(message = "summary must not be null")
+	@NotBlank(message = "summary must not be null  ")
 	private String summary;
 	private String acceptanceCriteria;
 	private String Status;
